@@ -1,0 +1,12 @@
+#用户登录成功
+url: http://127.0.0.1:5000/login/
+method: post
+data: {"username":"无涯" ,"password":"asd888","age":12,"six":"男"}
+expect: {"username":"无涯"}
+
+---
+url: http://127.0.0.1:5000/login/
+method: post
+data: {"password":"asd888","age":12,"six":"男"}
+expect: {"username":"用户名不能为空"}
+
