@@ -1,3 +1,7 @@
+url: http://127.0.0.1:5000/v1/api/books
+method: get
+---
+
 #用户登录成功
 url: http://127.0.0.1:5000/login/
 method: post

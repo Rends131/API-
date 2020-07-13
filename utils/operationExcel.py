@@ -1,6 +1,7 @@
 import xlrd
 from common.public import filePath
 from utils.operationYaml import OperationYaml
+from common.public import *
 
 class ExcelValues:
     caseID=0 #第一行
@@ -59,7 +60,11 @@ class OpenreationExcel(OperationYaml):
 
     def getUrl(self,row):
         """获取请求地址"""
-        return self.getValue(row=row, col=ExcelValues().getUrl)
+        url =  self.getValue(row=row, col=ExcelValues().getUrl)
+        if '{bookID}' in url:
+            return str(url).replace('{bookID}',readContent())
+        else:
+            return url
 
     def getData(self,row):
         """获取请求参数"""
@@ -71,8 +76,7 @@ class OpenreationExcel(OperationYaml):
 
     def getJson(self,row):
         """建立映射，通过yaml获取参数"""
-        return self.dictYaml()[self.getData(row=row)]
-        # return self.getValue(row=row,col=ExcelValues().getData)
+        return (self.dictYaml()[self.getData(row=row)])
 
     def getExpect(self,row):
         """获取参数"""
@@ -80,12 +84,6 @@ class OpenreationExcel(OperationYaml):
 
 if __name__ == '__main__':
     obj=OpenreationExcel()
-#     # print(obj.getValue(row=2,col=ExcelValues().description()))
-#     # print(obj.getValue(row=2,col=ExcelValues().getcaseID))
-#     print("caseid:",obj.getCaseID(row=4))
-#     print("method:",obj.getMethod(row=4))
-#     print("data:",obj.getExcelData(row=4))
-#     print("Expect:",obj.getExpect(row=4))
-#     print("URL:",obj.getUrl(row=4))
-    print("DATA:",obj.getData(row=4))
-    print(obj.getJson(row=4))
+    # print(obj.getUrl(row=4))
+    # print(obj.getJson(row=4)
+    # obj.getData(3)

@@ -1,6 +1,7 @@
 #!usr/bin/env python
 # -*- coding:utf-8 -*-
 import os
+import datetime
 
 base_url=os.path.dirname(os.path.dirname(__file__))
 
@@ -17,6 +18,14 @@ def filePath(fileDir='data',fileName='login.yaml'):
 		os.path.dirname(os.path.dirname(__file__)),fileDir,fileName
 	)
 
-# print(filePath())
-# print(filePath('common','public'))
-# print(filePath(fileDir='',fileName='Readme.md'))
+def writecContet(content):
+	"""写入文件"""
+	# print("写入的时间是:",datetime.datetime.now())
+	with open(filePath(fileDir='data',fileName='bookID'),'w')as f:
+		f.write(str(content))
+
+def readContent():
+	"""读取文件"""
+	# print("读入的时间是:",datetime.datetime.now())
+	with open(filePath(fileDir='data',fileName='bookID'),'r')as f:
+		return f.read()

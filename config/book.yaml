@@ -1,5 +1,5 @@
 book_002:
-  {"author":"wuya","done":tuue,"name":"API案例实战"}
+  {"author":"wuya","done":true,"name":"API案例实战"}
 
 book_004:
-  {"author":"无涯","done":tuue,"name":"B自动化测试平台"}
+  {"author":"长得帅","done":true,"name":"B自动化测试平台"}

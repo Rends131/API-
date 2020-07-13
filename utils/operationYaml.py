@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 import yaml
 from common.public import filePath
+import json
 
 class OperationYaml:
 	def readYaml(self):
@@ -16,6 +17,6 @@ class OperationYaml:
 
 if __name__ == "__main__":
 	obj=OperationYaml()
-	# for item in obj.readYaml():
-	# 	print(item)
-	print(obj.dictYaml()['book_002'])
+	print(obj.dictYaml())
+	print(type(obj.dictYaml()))
+	print(obj.dictYaml()["book_002"])
