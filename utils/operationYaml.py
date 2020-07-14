@@ -18,5 +18,3 @@ class OperationYaml:
 if __name__ == "__main__":
 	obj=OperationYaml()
 	print(obj.dictYaml())
-	print(type(obj.dictYaml()))
-	print(obj.dictYaml()["book_002"])
